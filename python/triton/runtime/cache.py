@@ -117,8 +117,8 @@ class FileCacheManager(CacheManager):
         assert self.lock_path is not None
         filepath = self._make_path(filename)
         # Random ID to avoid any collisions
-        rnd_id = random.randint(0, 1000000)
-        # we use the PID incase a bunch of these around so we can see what PID made it
+        rnd_id = random.randint(0, 100_000_000)
+        # we use the PID in case a bunch of these around so we can see what PID made it
         pid = os.getpid()
 
         # use tempfile to be robust against program interruptions
